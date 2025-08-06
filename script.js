@@ -55,9 +55,9 @@ function mostrarImagem(indice) {
   const img = document.getElementById("cardapioImagem");
   img.src = imagensCardapio[indice];
   
-  // Atualiza bolinhas
-  document.querySelectorAll(".bolinha").forEach((b, i) => {
-    b.classList.toggle("active", i === indice);
+  // Atualiza miniaturas ativas
+  document.querySelectorAll(".miniaturas img").forEach((thumb, i) => {
+    thumb.classList.toggle("active", i === indice);
   });
 }
 
@@ -66,7 +66,7 @@ function irParaImagem(indice) {
   mostrarImagem(indiceAtual);
 }
 
-// Suporte a gesto de arrastar no celular
+// Gesto no celular
 let startX = 0;
 document.getElementById("cardapioImagem").addEventListener("touchstart", e => {
   startX = e.touches[0].clientX;
@@ -87,3 +87,5 @@ window.onclick = function (event) {
   if (event.target === modalMapa) fecharMapa();
   if (event.target === modalCardapio) fecharCardapio();
 };
+
+

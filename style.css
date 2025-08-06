@@ -219,7 +219,7 @@ footer {
 .slider {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza a imagem */
+  justify-content: center;
 }
 
 .slider img {
@@ -228,23 +228,58 @@ footer {
   border-radius: 10px;
 }
 
-.paginacao {
+/* Container das miniaturas e do botão X */
+.miniaturas-container {
   margin-top: 15px;
-  text-align: center;
+  display: flex;
+  align-items: center; /* Garante que o X fique alinhado verticalmente */
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: nowrap; /* Impede quebra de linha */
 }
 
-.bolinha {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin: 0 6px;
-  background-color: rgba(255,255,255,0.6);
-  border: 2px solid #fff;
-  border-radius: 50%;
+/* Miniaturas das páginas */
+.miniaturas {
+  display: flex;
+  gap: 10px;
+}
+
+.miniaturas img {
+  width: 60px;
+  height: auto;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  opacity: 0.7;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
-.bolinha.active {
-  background-color: #fff;
+.miniaturas img:hover,
+.miniaturas img.active {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Botão X ao lado das miniaturas */
+.fechar-cardapio {
+  font-size: 1.8em;
+  line-height: 1; /* Mantém altura do X proporcional */
+  color: rgba(255,255,255,0.9); /* mesma cor das setas antigas */
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.fechar-cardapio:hover {
+  color: white;
+}
+
+/* Responsividade para celular */
+@media (max-width: 600px) {
+  .miniaturas img {
+    width: 50px;
+  }
+
+  .fechar-cardapio {
+    font-size: 1.6em;
+  }
 }

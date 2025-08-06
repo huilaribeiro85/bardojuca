@@ -29,18 +29,20 @@
 			
 			<button class="botao-link" onclick="abrirCardapio()">Cardápio</button>
 
-			<!-- Modal Cardápio -->
-			<div id="modalCardapio" class="modal">
-			  <div class="modal-content cardapio">
-				<div class="slider">
-				  <img id="cardapioImagem" src="pag1.png" alt="Cardápio">
-				</div>
-				<div class="paginacao">
-				  <span class="bolinha active" onclick="irParaImagem(0)"></span>
-				  <span class="bolinha" onclick="irParaImagem(1)"></span>
-				</div>
-			  </div>
+		<div id="modalCardapio" class="modal">
+		  <div class="modal-content cardapio">
+			<div class="slider">
+			  <img id="cardapioImagem" src="pag1.png" alt="Cardápio">
 			</div>
+			<div class="miniaturas-container">
+			  <div class="miniaturas">
+				<img src="pag1.png" alt="Miniatura 1" onclick="irParaImagem(0)">
+				<img src="pag2.png" alt="Miniatura 2" onclick="irParaImagem(1)">
+			  </div>
+			  <span class="fechar-cardapio" onclick="fecharCardapio()">&#10006;</span>
+			</div>
+		  </div>
+		</div>
 
 			
 			<!-- <a class="botao-link" href="https://deliverydojuca.menudino.com/" target="_blank">Cardápio Delivery</a> -->
