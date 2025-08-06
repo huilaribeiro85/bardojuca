@@ -54,12 +54,15 @@ function fecharCardapio() {
 function mostrarImagem(indice) {
   const img = document.getElementById("cardapioImagem");
   img.src = imagensCardapio[indice];
+  
+  // Atualiza bolinhas
+  document.querySelectorAll(".bolinha").forEach((b, i) => {
+    b.classList.toggle("active", i === indice);
+  });
 }
 
-function mudarImagem(direcao) {
-  indiceAtual += direcao;
-  if (indiceAtual < 0) indiceAtual = imagensCardapio.length - 1;
-  if (indiceAtual >= imagensCardapio.length) indiceAtual = 0;
+function irParaImagem(indice) {
+  indiceAtual = indice;
   mostrarImagem(indiceAtual);
 }
 
@@ -70,11 +73,11 @@ document.getElementById("cardapioImagem").addEventListener("touchstart", e => {
 });
 document.getElementById("cardapioImagem").addEventListener("touchend", e => {
   let endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) mudarImagem(1); // arrastou para esquerda
-  if (endX - startX > 50) mudarImagem(-1); // arrastou para direita
+  if (startX - endX > 50) irParaImagem((indiceAtual + 1) % imagensCardapio.length);
+  if (endX - startX > 50) irParaImagem((indiceAtual - 1 + imagensCardapio.length) % imagensCardapio.length);
 });
 
-// Fechar clicando fora do modal
+// Fechar clicando fora
 window.onclick = function (event) {
   const modal = document.getElementById("modal");
   const modalMapa = document.getElementById("modalMapa");
@@ -84,5 +87,3 @@ window.onclick = function (event) {
   if (event.target === modalMapa) fecharMapa();
   if (event.target === modalCardapio) fecharCardapio();
 };
-
-
