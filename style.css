@@ -201,6 +201,7 @@ footer {
   color: #777;
 }
 
+/* Modal cardápio */
 .modal-content.cardapio {
   background: none;
   border: none;
@@ -208,16 +209,20 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centraliza horizontal */
-  justify-content: center; /* Centraliza vertical */
+  justify-content: center;
   max-width: 95%;
   max-height: 90vh;
   margin: auto;
   top: 50%;
   transform: translateY(-50%);
+  box-sizing: border-box;
+  overflow: visible; /* Importante para não cortar o conteúdo */
 }
 
+/* Slider da imagem principal */
 .slider {
-  position: relative;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   justify-content: center;
 }
@@ -226,19 +231,21 @@ footer {
   max-width: 100%;
   max-height: 80vh;
   border-radius: 10px;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* Container das miniaturas e do botão X */
+/* Container miniaturas e fechar */
 .miniaturas-container {
   margin-top: 15px;
   display: flex;
-  align-items: center; /* Garante que o X fique alinhado verticalmente */
+  align-items: center; /* Alinha verticalmente o X com as miniaturas */
   justify-content: center;
   gap: 15px;
-  flex-wrap: nowrap; /* Impede quebra de linha */
+  flex-wrap: nowrap;
 }
 
-/* Miniaturas das páginas */
+/* Miniaturas */
 .miniaturas {
   display: flex;
   gap: 10px;
@@ -251,6 +258,8 @@ footer {
   cursor: pointer;
   opacity: 0.7;
   transition: transform 0.2s, opacity 0.2s;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .miniaturas img:hover,
@@ -259,21 +268,22 @@ footer {
   opacity: 1;
 }
 
-/* Botão X ao lado das miniaturas */
+/* Botão fechar */
 .fechar-cardapio {
   font-size: 1.8em;
-  line-height: 1; /* Mantém altura do X proporcional */
-  color: rgba(255,255,255,0.9); /* mesma cor das setas antigas */
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   user-select: none;
   transition: color 0.2s;
+  padding-left: 10px;
 }
 
 .fechar-cardapio:hover {
   color: white;
 }
 
-/* Responsividade para celular */
+/* Responsividade */
 @media (max-width: 600px) {
   .miniaturas img {
     width: 50px;
@@ -281,5 +291,13 @@ footer {
 
   .fechar-cardapio {
     font-size: 1.6em;
+  }
+
+  .slider {
+    max-width: 90vw;
+  }
+
+  .slider img {
+    max-height: 60vh;
   }
 }
