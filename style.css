@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #2B5C6B;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logo {
+  max-width: 200px;
+  margin: 30px auto;
+  display: block;
+  background: none;
+  border: none;
+  box-shadow: 0 0px 100px rgba(43, 92, 107, 2); /* sombra suave */
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #2B5C6B;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 0px;
+}
+
+button {
+  background-color: #D8A03A;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #b87f2c;
+}
+
+.botao-link {
+  display: block;
+  width: 80%;
+  max-width: 220px;
+  text-align: center;
+  padding: 12px 20px;
+  margin: 10px auto;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #2B5C6B;
+  border: 2px solid #2B5C6B;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 0 10px #2B5C6B, 0 0 20px #2B5C6B;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.botao-link:hover {
+  background-color: #2B5C6B;
+  color: #F4EFE5;
+  box-shadow: 0 0 15px #2B5C6B, 0 0 25px #2B5C6B;
+}
+
+.botoes-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #F4EFE5;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #2B5C6B;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  color: #2B5C6B;
+  text-align: left;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.modal-content textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #2B5C6B;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.modal-content button {
+  background-color: #D8A03A;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #b87f2c;
+}
+
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal-content.mapa {
+  background-color: #F4EFE5;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #2B5C6B;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: #2B5C6B;
+  text-align: left;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modal-content.mapa iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+}
+
+.horario-funcionamento {
+  margin-top: 30px;
+  text-align: center;
+  background-color: rgba(43, 92, 107, 0.7); /* azul escuro com transparência */
+  color: #F4EFE5; /* texto claro */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.horario-funcionamento h3 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: #F4EFE5;
+}
+
+.horario-funcionamento p {
+  font-size: 1em;
+  margin: 4px 0;
+}
+
+
+footer {
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.modal-content.cardapio {
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  max-width: 95%;
+  max-height: 90vh;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
+}
+
+.slider img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2em;
+  border-radius: 50%;
+}
+
+.seta.esquerda {
+  left: -50px;
+}
+
+.seta.direita {
+  right: -50px;
+}
+
+@media (max-width: 600px) {
+  .seta.esquerda { left: 10px; }
+  .seta.direita { right: 10px; }
+}
