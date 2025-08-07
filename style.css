@@ -501,3 +501,6 @@ body.modal-aberto {
   color: #fff;
 }
 
+.botao-opcao:focus {
+  outline: none;
+}
