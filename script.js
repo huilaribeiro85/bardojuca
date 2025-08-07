@@ -13,7 +13,7 @@ function enviarMensagem() {
     alert("Digite uma mensagem antes de enviar.");
     return;
   }
-  const numero = "5524998787233";
+  const numero = "5524999787233";
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
   fecharModal();
@@ -592,9 +592,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	  mensagem += `\n\n🚚 *Taxa de entrega (${bairro}):* R$ ${valorEntrega.toFixed(2).replace(".", ",")}`;
 	  mensagem += `\n💵 *Total geral:* R$ ${total.toFixed(2).replace(".", ",")}`;
 
-	  const numeroWhatsApp = "5524998787233";
+	  const numeroWhatsApp = "5524999787233";
 	  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 	  window.open(url, "_blank");
 	});
   }
 });
+
