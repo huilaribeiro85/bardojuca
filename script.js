@@ -13,7 +13,7 @@ function enviarMensagem() {
     alert("Digite uma mensagem antes de enviar.");
     return;
   }
-  const numero = "5524999522320";
+  const numero = "5524998787233";
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
   fecharModal();
@@ -552,3 +552,4 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
   }
 });
+
