@@ -203,7 +203,7 @@ const detalhesPratos = {
 const bairrosPorCidade = {
   "Volta Redonda": [
       "Aero",
-      "Água Limpa",
+      "Agua Limpa",
       "Aterrado",
       "Barreira Cravo",
       "Bela Vista",
@@ -271,7 +271,7 @@ const bairrosPorCidade = {
 const valorEntregaPorBairro = {
   // Volta Redonda - R$1,00
   "Aero": 9.00,
-  "Água Limpa": 10.00,
+  "Agua Limpa": 10.00,
   "Aterrado": 9.00,
   "Barreira Cravo": 10.00,
   "Bela Vista": 9.00,
@@ -603,3 +603,4 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
   }
 });
+
