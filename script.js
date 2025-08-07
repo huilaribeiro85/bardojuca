@@ -492,6 +492,9 @@ function selecionarOpcao(botao, grupoNome) {
   const grupo = document.querySelectorAll(`[data-grupo="${grupoNome}"] .botao-opcao`);
   grupo.forEach(btn => btn.classList.remove("selecionado"));
   botao.classList.add("selecionado");
+
+  // Remove o foco para evitar o estado "preso" no mobile
+  botao.blur();
 }
 
 function atualizarTotal() {
