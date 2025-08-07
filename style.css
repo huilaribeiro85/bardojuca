@@ -7,8 +7,9 @@
 
 body {
   font-family: 'Arial', serif;
-  background: url('background.jpg') no-repeat center center fixed;
+  background: url('background.jpg') no-repeat center center;
   background-size: cover;
+  background-attachment: scroll; /* ou simplesmente remova */
   color: #2B5C6B;
   text-align: center;
   padding: 20px;
