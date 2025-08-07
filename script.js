@@ -535,8 +535,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		return;
 	  }
 
-	  const itens = document.querySelectorAll(".item-pedido");
-	  let mensagem = `Olá, meu nome é ${nome} e gostaria de fazer um pedido:\n\n📍 *Endereço:*\n${rua}, nº ${numero} - ${bairro}, ${cidade}\n\n📝 *Itens:*\n`;
+	  const complemento = document.getElementById("complemento")?.value.trim();
+      let enderecoCompleto = `${rua}, nº ${numero}`;
+      if (complemento) {
+        enderecoCompleto += `, ${complemento}`;
+      }
+      let mensagem = `Olá, meu nome é ${nome} e gostaria de fazer um pedido:\n\n📍 *Endereço:*\n${enderecoCompleto} - ${bairro}, ${cidade}\n\n📝 *Itens:*\n`;
+
 	  let algumItemSelecionado = false;
 	  let index = 0;
 	  let total = 0;
@@ -598,4 +603,3 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
   }
 });
-
