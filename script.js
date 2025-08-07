@@ -98,12 +98,15 @@ const itensCardapio = {
     { nome: "Peixe", preco: "15,90" }
   ],
   "Prato Individual": [
-    { nome: "Corvina em Posta", preco: "39,90" },
+    { nome: "Bobé de Camarão", preco: "79,90" },
+    { nome: "Corvina em Posta", preco: "58,90" },
     { nome: "Filé de Frango (frito ou grelhado)", preco: "35,90" },
     { nome: "File de Tilápia (frita ou grelhada)", preco: "39,90" },
+    { nome: "File de Linguado (frito)", preco: "61,90" },
     { nome: "Strogonoff de Camarão", preco: "69,90" },
     { nome: "Strogonoff de Frango", preco: "49,90" }
   ],
+
   "Refeições (2 pessoas)": [
     { nome: "Bobó de Camarão", preco: "129,90" },
     { nome: "Camarão ao Catupiry", preco: "139,90" },
@@ -113,18 +116,31 @@ const itensCardapio = {
     { nome: "Strogonoff de Camarão", preco: "119,90" },
     { nome: "Strogonoff de Frango", preco: "79,90" }
   ],
+
+  "Prato Kids": [
+    { nome: "File de Tilápia (frita ou grelhada)", preco: "34,90" },
+    { nome: "Filé de Frango (frito ou grelhado)", preco: "31,90" }
+  ],
+
   "Guarnições": [
-    { nome: "Arroz", preco: "12,50" },
+    { nome: "Arroz", preco: "15,50" },
+    { nome: "Batata Palha", preco: "18,90" },
     { nome: "Pirão", preco: "18,90" },
-    { nome: "Purê", preco: "23,90" },
-    { nome: "Salada", preco: "16,00" }
+    { nome: "Purê", preco: "15,90" },
+    { nome: "Farofa", preco: "15,90" },
+    { nome: "Salada", preco: "16,00" },
+    { nome: "Salada Especial", preco: "27,90" }
   ],
   "Sobremesas": [
-    { nome: "Brownie", preco: "10,00" },
-    { nome: "Brownie c/ Sorvete", preco: "20,90" },
+    { nome: "Brownie", preco: "9,00" },
+    { nome: "Brownie c/ Sorvete", preco: "19,90" },
+    { nome: "Cocada Artesanal", preco: "10,00" },
     { nome: "Doce de Abóbora", preco: "8,00" },
     { nome: "Doce de Leite", preco: "8,00" },
-    { nome: "Doce de Mamão", preco: "8,00" }
+    { nome: "Doce de Mamão", preco: "8,00" },
+    { nome: "Palha Italiana", preco: "8,00" },
+    { nome: "Pudim", preco: "12,00" }
+
   ],
   "Bebidas sem Álcool": [
     { nome: "Água", preco: "4,50" },
@@ -133,7 +149,6 @@ const itensCardapio = {
     { nome: "Guaraviton", preco: "7,90" },
     { nome: "H2O (normal/limoneto)", preco: "8,90" },
     { nome: "Refrigerante (lata 350ml)", preco: "8,90" },
-    { nome: "Refrigerante (1 litro)", preco: "12,90" },
     { nome: "Refrigerante (2 litros)", preco: "17,00" }
   ],
   "Cerveja Lata (350ml)": [
@@ -143,25 +158,6 @@ const itensCardapio = {
   "Cerveja Long Neck": [
     { nome: "Budweiser", preco: "10,90" },
     { nome: "Heineken", preco: "11,90" }
-  ],
-  "Cerveja Garrafa (600ml)": [
-    { nome: "Antártica/Brahma/Skol", preco: "13,90" },
-    { nome: "Heineken", preco: "15,90" },
-    { nome: "Original/Brama Extra", preco: "17,90" }
-  ],
-  "Drinks": [
-    { nome: "Caipirinha (cachaça)", preco: "18,90" },
-    { nome: "Caipiríssima (vodka)", preco: "19,90" }
-  ],
-  "Destilados": [
-    { nome: "Campari, Bacardi, Gin, Martini", preco: "14,00" },
-    { nome: "Tequila", preco: "19,00" },
-    { nome: "Vodka", preco: "15,00" },
-    { nome: "Whisky", preco: "19,00" },
-    { nome: "Ypioca", preco: "9,00" }
-  ],
-  "Vinho": [
-    { nome: "Taça", preco: "13,90" }
   ]
 };
 
@@ -229,32 +225,76 @@ const bairrosPorCidade = {
 
 const valorEntregaPorBairro = {
   // Volta Redonda - R$1,00
-  "Açude": 1.00, "Aero Clube": 1.00, "Água Limpa": 1.00, "Área Rural de Volta Redonda": 1.00,
-  "Aterrado": 1.00, "Barreira Cravo": 1.00, "Bela Vista": 1.00, "Belmonte": 1.00, "Belo Horizonte": 1.00,
-  "Bom Jesus": 1.00, "Brasilândia": 1.00, "Caieira": 1.00, "Cailândia": 1.00, "Candelária": 1.00,
-  "Casa de Pedra": 1.00, "Centro": 1.00, "Colorado": 1.00, "Conforto": 1.00, "Coqueiros": 1.00,
-  "Dom Bosco": 1.00, "Duzentos e Quarenta e Nove": 1.00, "Eldorado": 1.00, "Eucaliptal": 1.00,
-  "Jardim Amália": 1.00, "Jardim Belvedere": 1.00, "Jardim Cidade do Aço": 1.00, "Jardim Esperança": 1.00,
-  "Jardim Europa": 1.00, "Jardim Normandia": 1.00, "Jardim Paraíba": 1.00, "Jardim Ponte Alta": 1.00,
-  "Jardim Primavera": 1.00, "Jardim Suíça": 1.00, "Jardim Tiradentes": 1.00, "Jardim Veneza": 1.00,
-  "Jardim Vila Rica - Tiradentes": 1.00, "Laranjal": 1.00, "Limoeiro": 1.00, "Mariana Torres": 1.00,
-  "Minerlândia": 1.00, "Mirante do Vale": 1.00, "Monte Castelo": 1.00, "Morada do Campo": 1.00,
-  "Morro da Conquista": 1.00, "Morro São Carlos": 1.00, "Niterói": 1.00, "Nossa Senhora das Graças": 1.00,
-  "Nova Esperança": 1.00, "Nova Primavera": 1.00, "Nova São Luiz": 1.00, "Padre Josino": 1.00,
-  "Parque das Ilhas": 1.00, "Parque Vitória": 1.00, "Pinto da Serra": 1.00, "Ponte Alta": 1.00,
-  "Retiro": 1.00, "Rio das Flores": 1.00, "Roma": 1.00, "Rústico": 1.00, "Sam Remo": 1.00,
-  "Santa Cruz": 1.00, "Santa Cruz II": 1.00, "Santa Rita do Zarur": 1.00, "Santo Agostinho": 1.00,
-  "São Carlos": 1.00, "São Cristóvão": 1.00, "São Geraldo": 1.00, "São João": 1.00,
-  "São João Batista": 1.00, "São Lucas": 1.00, "São Luís": 1.00, "São Sebastião": 1.00,
-  "Sessenta": 1.00, "Siderlândia": 1.00, "Siderópolis": 1.00, "Sidervile": 1.00,
-  "Três Poços": 1.00, "Vale Verde": 1.00, "Vila Americana": 1.00, "Vila Brasília": 1.00,
-  "Vila Mury": 1.00, "Vila Rica": 1.00, "Vila Rica Ouro Verde": 1.00, "Vila Santa Cecília": 1.00,
-  "Voldac": 1.00, "Volta Grande": 1.00, "Volta Grande II": 1.00,
+  "Aero": 9.00,
+  "Água Limpa": 10.00,
+  "Aterrado": 9.00,
+  "Barreira Cravo": 10.00,
+  "Bela Vista": 9.00,
+  "Belmonte": 8.00,
+  "Bom Jesus": 8.00,
+  "Casa de Pedra": 10.00,
+  "Centro": 9.00,
+  "Conforto": 6.00,
+  "Duzentos e Quarenta e Nove": 6.00,
+  "Eucaliptal": 4.00,
+  "Jardim Amália I": 10.00,
+  "Jardim Amália II": 10.00,
+  "Jardim Belvedere": 10.00,
+  "Jardim Cidade do Aço": 8.00,
+  "Jardim Esperança": 10.00,
+  "Jardim Europa": 7.00,
+  "Jardim Normandia": 10.00,
+  "Jardim Paraíba": 9.00,
+  "Jardim Ponte Alta": 8.00,
+  "Jardim Primavera": 9.00,
+  "Jardim Suíça": 7.00,
+  "Jardim Tiradentes": 10.00,
+  "Jardim Veneza": 10.00,
+  "Jardim Vila Rica - Tiradentes": 10.00,
+  "Laranjal": 9.00,
+  "Limoeiro": 9.00,
+  "Minerlândia": 8.00,
+  "Mirante do Vale": 10.00,
+  "Monte Castelo": 9.00,
+  "Morro São Carlos": 8.00,
+  "Niterói": 9.00,
+  "Nossa Senhora das Graças": 9.00,
+  "Nova São Luiz": 12.00,
+  "Parque das Ilhas": 10.00,
+  "Pinto da Serra": 12.00,
+  "Ponte Alta": 8.00,
+  "Retiro": 8.00,
+  "Rústico": 8.00,
+  "Sam Remo": 10.00,
+  "Santo Agostinho": 10.00,
+  "São Cristóvão": 7.00,
+  "São Geraldo": 10.00,
+  "São João": 8.00,
+  "São João Batista": 10.00,
+  "São Lucas": 7.00,
+  "São Luís": 12.00,
+  "Sessenta": 9.00,
+  "Siderlândia": 8.00,
+  "Siderópolis": 10.00,
+  "Sidervile": 8.00,
+  "Vila Americana": 10.00,
+  "Vila Mury": 9.00,
+  "Vila Santa Cecília": 9.00,
+  "Voldac": 10.00,
+  "Volta Grande": 10.00,
+  "Volta Grande III": 10.00,
 
   // Barra Mansa
-  "9 de Abril": 8.00, "Assunção": 8.00, "Boavista 2": 8.00, "Mangueira": 8.00,
-  "Metalurgico": 8.00, "Paraíso": 8.00, "São Sebastião": 8.00, "Vila Eumira": 8.00,
-  "Santa Rosa": 12.00, "Vale do Paraíba": 12.00
+  "9 de Abril": 8.00,
+  "Assunção": 8.00,
+  "Boavista 2": 8.00,
+  "Mangueira": 8.00,
+  "Metalurgico": 8.00,
+  "Paraíso": 8.00,
+  "São Sebastião": 8.00,
+  "Vila Eumira": 8.00,
+  "Santa Rosa": 12.00,
+  "Vale do Paraíba": 12.00
 };
 
 function atualizarBairrosPorCidade() {
@@ -506,7 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	  mensagem += `\n\n🚚 *Taxa de entrega (${bairro}):* R$ ${valorEntrega.toFixed(2).replace(".", ",")}`;
 	  mensagem += `\n💵 *Total geral:* R$ ${total.toFixed(2).replace(".", ",")}`;
 
-	  const numeroWhatsApp = "5524999522320";
+	  const numeroWhatsApp = "5524998787233";
 	  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 	  window.open(url, "_blank");
 	});
