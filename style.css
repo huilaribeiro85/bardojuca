@@ -488,12 +488,9 @@ body.modal-aberto {
   color: #2B5C6B;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
+  /* remove a transição para mudar instantaneamente */
+  transition: none;
   font-size: 0.95em;
-}
-
-.botao-opcao:hover {
-  background-color: #e2e2e2;
 }
 
 .botao-opcao.selecionado {
@@ -503,4 +500,8 @@ body.modal-aberto {
 
 .botao-opcao:focus {
   outline: none;
+}
+
+.botao-opcao:hover {
+  background-color: #e2e2e2;
 }
