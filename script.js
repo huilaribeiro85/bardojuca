@@ -262,7 +262,7 @@ const bairrosPorCidade = {
       "Volta Grande III"
   ],
   "Barra Mansa": [
-    "9 de Abril", "Assunção", "Boavista 2", "Mangueira", "Metalurgico", "Paraíso",
+    "9 de Abril", "Assunção", "Boavista 2", "Mangueira", "Metalúrgico", "Paraíso",
     "Santa Rosa", "São Sebastião", "Vale do Paraíba", "Vila Elmira"
   ]
 };
@@ -334,7 +334,7 @@ const valorEntregaPorBairro = {
   "Assunção": 8.00,
   "Boavista 2": 8.00,
   "Mangueira": 8.00,
-  "Metalurgico": 8.00,
+  "Metalúrgico": 8.00,
   "Paraíso": 8.00,
   "São Sebastião": 8.00,
   "Vila Elmira": 8.00,
@@ -605,6 +605,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
   }
 });
+
 
 
 
