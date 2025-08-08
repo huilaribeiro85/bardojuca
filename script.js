@@ -337,7 +337,7 @@ const valorEntregaPorBairro = {
   "Metalurgico": 8.00,
   "Paraíso": 8.00,
   "São Sebastião": 8.00,
-  "Vila Eumira": 8.00,
+  "Vila Elmira": 8.00,
   "Santa Rosa": 12.00,
   "Vale do Paraíba": 12.00
 };
@@ -605,5 +605,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
   }
 });
+
 
 
