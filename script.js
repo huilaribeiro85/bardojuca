@@ -98,7 +98,7 @@ const itensCardapio = {
     { nome: "Peixe", preco: "15,90" }
   ],
   "Prato Individual": [
-    { nome: "Bobé de Camarão", preco: "79,90" },
+    { nome: "Bobó de Camarão", preco: "79,90" },
     { nome: "Corvina em Posta", preco: "58,90" },
     { nome: "Filé de Frango (frito ou grelhado)", preco: "35,90" },
     { nome: "File de Tilápia (frita ou grelhada)", preco: "39,90" },
@@ -133,12 +133,11 @@ const itensCardapio = {
   ],
   "Sobremesas": [
     { nome: "Brownie", preco: "9,00" },
-    { nome: "Brownie c/ Sorvete", preco: "19,90" },
     { nome: "Cocada Artesanal", preco: "10,00" },
     { nome: "Doce de Abóbora", preco: "8,00" },
     { nome: "Doce de Leite", preco: "8,00" },
     { nome: "Doce de Mamão", preco: "8,00" },
-    { nome: "Palha Italiana", preco: "8,00" },
+    { nome: "Palha Italiana", preco: "10,00" },
     { nome: "Pudim", preco: "12,00" }
 
   ],
@@ -606,4 +605,5 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
   }
 });
+
 
