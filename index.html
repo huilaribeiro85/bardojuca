@@ -1,110 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bar do Juca</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar do Juca - Pedidos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="logo.png" alt="Logo Bar do Juca" class="logo" />
-    </header>
 
-    <main>
-	  <div class="botoes-links">
-		<button class="botao-link" onclick="window.open('https://www.instagram.com/bardojucaeucaliptal', '_blank')">Instagram</button>
+  <!-- Topo -->
+  <header class="top-bar">
+    <img src="logo.png" alt="Logo Bar do Juca" class="logo">
+    <button id="ver-carrinho" class="btn-carrinho">Carrinho (0)</button>
+  </header>
 
-		<button class="botao-link" onclick="abrirMapa()">Localização</button>
-	 	<!-- Modal Mapa -->
-		<div id="modalMapa" class="modal">
-	      <div class="modal-content mapa">
-			<span class="fechar" onclick="fecharMapa()">&times;</span>
-			<h2>Nos encontre no mapa</h2>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1068.576310991951!2d-44.12110149815253!3d-22.52579164189033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e9859191bda41%3A0x4bd92b6436113445!2sBar%20do%20Juca!5e1!3m2!1spt-BR!2sbr!4v1754389126601!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-		  </div>
-		</div>
+  <!-- Barra de categorias -->
+  <nav class="category-bar" id="category-bar"></nav>
 
-		<button class="botao-link" onclick="abrirModalPedido()">Faça seu Pedido pelo WhatsApp</button>
-		<div id="modalPedido" class="modal">
-	  <div class="modal-content">
-		<span class="fechar" onclick="fecharModalPedido()">&times;</span>
-		<h2>Seus Dados</h2>
+  <!-- Lista de produtos -->
+  <main id="product-list">
+    <p class="placeholder">Selecione uma categoria para ver os produtos.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+		<img src="logo_nbg.png" alt="Logo" class="footer-logo">
+		<span>Meu Negócio WebPage</span>
+		<span class="footer-icon">📞</span>
+		<span>(24) 99952-2320</span>
+    </div>
+  </footer>
+  
+  <!-- Modal do Carrinho -->
+  <div id="modal-carrinho" class="modal-carrinho">
+    <div class="modal-content">
+      <span id="fechar-modal" class="fechar-modal">&times;</span>
+      <h2>Seu Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <div class="total-carrinho">Total: R$ <span id="total-carrinho">0,00</span></div>
+      <div class="botoes-carrinho">
+        <button id="finalizar-compra" class="btn-carrinho">Dados de Entrega</button>
+        <button id="continuar-comprando" class="btn-carrinho">Continuar Comprando</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de Dados do Cliente -->
+  <div id="modal-dados" class="modal-carrinho">
+    <div class="modal-content">
+      <span id="fechar-dados" class="fechar-modal">&times;</span>
+      <h2>Seus Dados</h2>
+
 		<label>Cidade:</label>
-		<select id="cidade">
-		  <option value="Volta Redonda">Volta Redonda</option>
-		  <option value="Barra Mansa">Barra Mansa</option>
+		<select id="cidade" required>
+		  <option value="">Selecione a cidade</option>
+		  <option>Volta Redonda</option>
+		  <option>Barra Mansa</option>
 		</select>
 
 		<label>Bairro:</label>
-		<select id="bairro">
-		  <!-- vazio: os bairros serão inseridos dinamicamente pelo JS -->
+		<select id="bairro" required>
+		  <option value="">Selecione seu bairro</option>
 		</select>
 
-		<label>Rua:</label>
-		<input type="text" id="rua" placeholder="Digite sua rua" />
+		<label>Endereço:</label>
+		<input type="text" id="endereco" placeholder="Digite sua rua" required>
 
 		<label>Número:</label>
-		<input type="text" id="numero" placeholder="Número da casa" />
-		
+		<input type="text" id="numero" placeholder="Número da casa" required>
+
 		<label>Complemento:</label>
 		<input type="text" id="complemento" placeholder="Campo não obrigatório">
 
 		<label>Nome Completo:</label>
-		<input type="text" id="nome" placeholder="Seu nome completo" />
-		<div class="rodape-modal">
-		  <button onclick="abrirCardapioPedido()">Avançar para o Cardápio</button>
-	    </div>
-	  </div>
+		<input type="text" id="nome" placeholder="Seu nome completo" required>
+
+      <button id="confirmar-dados" class="btn-carrinho">Finalizar Pedido</button>
+    </div>
+  </div>
+
+  <!-- Modal de Conferência Final -->
+  <div id="modal-final" class="modal-carrinho">
+    <div class="modal-content">
+    	<span id="fechar-final" class="fechar-modal">&times;</span>
+	    <h2>Confirme seu Pedido</h2>
+		<div id="resumo-final"></div>
+		<div class="total-carrinho">Total com entrega: R$ <span id="total-final">0,00</span></div>
+		<button id="enviar-whatsapp" class="btn-carrinho">Enviar pelo WhatsApp</button>
 	</div>
-
-	<div id="modalCardapioPedido" class="modal">
-	  <div class="modal-content modal-pedido">
-		<span class="fechar" onclick="fecharCardapioPedido()">&times;</span>
-		<h2>Escolha seus itens</h2>
-
-		<div id="listaItens" class="conteudo-scroll"></div>
-
-	<div class="rodape-modal">
-	  <div id="valorTotal" style="margin-bottom: 10px; font-weight: bold; font-size: 1.1em; color: #2B5C6B;">
-		Total: R$ 0,00
-	  </div>
-	  <button id="enviarPedido">Enviar Pedido no WhatsApp</button>
-	</div>
-	  </div>
-	</div>
-
-
-		<button class="botao-link" onclick="abrirModal()">Fale Conosco</button>
-			<!-- Modal WhatsApp -->
-			<div id="modal" class="modal">
-				<div class="modal-content">
-					<span class="fechar" onclick="fecharModal()">&times;</span>
-					<h2>Envie sua mensagem</h2>
-					<textarea id="mensagem" placeholder="Digite sua mensagem..."></textarea>
-					<button onclick="enviarMensagem()">Enviar no WhatsApp</button>
-				</div>
-			</div>
-
-	<div class="horario-funcionamento">
-		<h3>Horário de Funcionamento</h3>
-		<p>Terça a Sábado: 17h30 às 23h00</p>
-	  <p>Domingo: 11h00 às 15h30</p>
-	</div>
-				
-		</div>
-
-    </main>
-
-    <footer>
-		<div class="horario-funcionamento">
-			<p>&copy; 2025 Bar do Juca.<br>Todos os direitos reservados.</p>
-		</div>
-    </footer>
   </div>
 
   <script src="script.js"></script>
+  
 </body>
 </html>
